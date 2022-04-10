@@ -6,10 +6,12 @@ When(/^I hover over (\d+) icon$/, async (number: number) => {
   await HoverPage.icons[number].moveTo();
 });
 
-Then(/^I should see for (\d+) user (.*) and (.*) appear$/, async (number: number, name: string, link: string) => {
+Then(/^I should see for (\d+) user (.*) and (.*) appear$/, async (number: number, name: string, href: string) => {
   const user = HoverPage.icons[number];
-  // TODO Minor move to page
-  await user.$('h5').waitForDisplayed();
-  await expect(user.$('h5')).toHaveText(name);
-  await expect(user.$('a')).toHaveAttr('href', link);
+  const header = user.$('h5');
+  const link = user.$('a');
+
+  await header.waitForDisplayed();
+  await expect(header).toHaveText(name);
+  await expect(link).toHaveAttr('href', href);
 });

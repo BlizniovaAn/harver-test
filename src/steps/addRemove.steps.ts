@@ -1,6 +1,6 @@
 import { Given, Then, When } from '@wdio/cucumber-framework';
 
-import AddRemovePage from "../pages/addRemove.page";
+import AddRemovePage from '../pages/addRemove.page';
 
 When(/^I add a new element$/, async () => {
   await AddRemovePage.addNewElement();
