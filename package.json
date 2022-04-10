@@ -1,13 +1,12 @@
 {
-  "name": "firstproject3",
+  "name": "harver-test",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "test assigment for Harver",
   "scripts": {
-    "test": "wdio wdio.conf.ts --spec ./src/features/*.feature",
-    "report": "allure generate allure-results --clean && allure open"
+    "test": "npx wdio wdio.conf.ts --spec ./src/features/*.feature",
+    "report": "npm run test && allure generate allure-results --clean && allure open"
   },
-  "author": "",
+  "author": "hanna.sipaila",
   "license": "ISC",
   "dependencies": {
     "@wdio/cli": "^7.19.3",
